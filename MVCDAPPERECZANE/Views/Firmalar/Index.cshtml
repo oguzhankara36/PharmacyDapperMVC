@@ -1,0 +1,58 @@
+﻿@model IEnumerable<MVCDAPPERECZANE.Models.FirmalarModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("FİRMA EKLE", "EY","Firmalar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.firmaadi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firmaciro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firmaadres)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firmatelefon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.firmafaks)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.firmaadi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firmaciro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firmaadres)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firmatelefon)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.firmafaks)
+        </td>
+        <td>
+            @Html.ActionLink("DÜZENLE", "EY", new {  id=item.firmaNo }) |
+            @Html.ActionLink("SİL", "Delete", new {  id=item.firmaNo
+       
+       })
+        </td>
+    </tr>
+}
+
+</table>

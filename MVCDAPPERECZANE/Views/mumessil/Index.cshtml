@@ -1,0 +1,44 @@
+﻿@model IEnumerable<MVCDAPPERECZANE.Models.mumessilModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("MUMESSİL EKLE", "EY")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.adsoyad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bolge)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.mudur)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.adsoyad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bolge)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mudur)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EY", new {  id=item.mno  }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.mno  })
+        </td>
+    </tr>
+}
+
+</table>
